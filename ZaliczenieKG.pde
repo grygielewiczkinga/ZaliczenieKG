@@ -1,26 +1,28 @@
 PImage img;
 void setup(){
-  size (800, 800);
+  size (800, 800);  // rozmiar okna 
 }
 
 void draw(){
-   background (255);
-   img = loadImage("so.jpg");
-   tint(100, 200, 200, 180);
-    image(img, 0, 0);
-    img = loadImage("sw.jpg");
-    tint(0, 153, 204, 100);
-    image(img, 0, 0);
-  if (mousePressed && (mouseButton == LEFT)) {
-    String[] tekst = loadStrings("sommer.txt");
-    textAlign(CENTER,CENTER);
- for(int i = 0; i<9;i++){text(tekst[i],width/2,20 + 30*i);
+   background (0);               // kolor tła
+   img = loadImage("so.jpg");  //  wczytuje zdjęcie
+   tint(100, 200, 200, 180);    // zmienia kolor zdjęcia oraz przeźroczystość
+    image(img, 0, 0);          // położenie zdjęcia
+    img = loadImage("sw.jpg");  //  wczytuje zdjęcie
+    tint(0, 153, 204, 100);     // zmienia kolor zdjęcia oraz przeźroczystość
+    image(img, 0, 0);           // położenie zdjęcia
+  if (mousePressed && (mouseButton == LEFT)) {      //jeśli naciśnięty lewy przycisk myszy
+    String[] tekst = loadStrings("sommer.txt");     // wyświetlany jest tekst wiersza Sommera
+    textAlign(CENTER,CENTER);                        // wyśrodkowanie tekstu
+ for(int i = 0; i<14;i++){text(tekst[i],width/2 , 70 + 30*i);  // pętla, dzięki której tekst wyświetlany jest tak długo, jak naciśnięty jest klawisz myszy
+                                                                // pozycja tekstu w ramce, wyśrodkowanie tekstu w ramce
  }
-   } else if (mousePressed && (mouseButton == RIGHT)) {
-    String[] tekst = loadStrings("swietlicki.txt");
-    textAlign(CENTER,CENTER);
- for(int i = 0; i<9;i++){text(tekst[i],width/2,20 + 30*i);
+   } else if (mousePressed && (mouseButton == RIGHT)) {   // jeśli naciśnięty prawy przycisk myszy
+    String[] tekst = loadStrings("swietlicki.txt");       // pojawia się wiersz Świetlickiego
+    textAlign(CENTER,CENTER);                              //wyśrodkowanie tekstu
+ for(int i = 0; i<14;i++){text(tekst[i],width/2 , 70 + 30*i);  // pętla, dzięki której tekst wyświetlany jest tak długo, jak naciśnięty jest klawisz myszy
+                                                               // pozycja tekstu w ramce, wyśrodkowanie tekstu w ramce
+ }
 
   } 
    }
-}
